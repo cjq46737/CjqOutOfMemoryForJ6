@@ -1,2 +1,8 @@
 
 *.class
+*.xml
+*.iml
+*.iml
+*.class
+out/production/CjqOutOfMemoryForJ6/com/cjq/outofmemory/RuntimeConstantPoolOOM.class
+*.iml
