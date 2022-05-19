@@ -1,19 +1,19 @@
 /*
  * @projectName CjqOutOfMemoryForJ6
- * @package com.cjq
- * @className com.cjq.cc
+ * @package com.cjq.allocation
+ * @className com.cjq.allocation.DynamicObjectAge
  * @copyright Copyright 2022 Thuisoft, Inc. All rights reserved.
  */
-package com.cjq;
+package com.cjq.allocation;
 
 /**
- * cc
- * @description 测试对象的age，对象经历过n次MinorGC后进入老年代
+ * DynamicObjectAge
+ * @description 测试Survivor中相同年龄对象总和大于Survivor空间一半时，对象进入老年代
  * @author chenjunqi
- * @date 2022年05月18日 21:41
+ * @date 2022年05月19日 21:43
  * @version 1.2.0
  */
-public class TestObjectAge {
+public class DynamicObjectAge {
 
     /**
      * 1M = 1024kb = 1024字节
@@ -31,6 +31,7 @@ public class TestObjectAge {
      */
     public static void main(String[] args) {
         byte[] allocation0 = new byte[_1MB / 4];
+        byte[] allocation1 = new byte[_1MB / 4];
         byte[] allocation2 = new byte[_1MB * 4];
         byte[] allocation3 = new byte[_1MB * 4];
         allocation3 = null;
